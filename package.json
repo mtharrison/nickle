@@ -1,5 +1,5 @@
 {
-  "name": "nickle",
+  "name": "@mtharrison/nickle",
   "version": "0.1.0",
   "description": "Open huge JS object caches in about a millisecond: a memory-mapped binary format that decodes lazily",
   "type": "module",

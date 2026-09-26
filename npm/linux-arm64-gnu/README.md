@@ -1,3 +1,3 @@
-# `nickle-linux-arm64-gnu`
+# `@mtharrison/nickle-linux-arm64-gnu`
 
-This is the **aarch64-unknown-linux-gnu** binary for `nickle`
+This is the **aarch64-unknown-linux-gnu** binary for `@mtharrison/nickle`

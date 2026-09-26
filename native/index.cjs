@@ -87,8 +87,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-android-arm64')
-        const bindingPackageVersion = require('nickle-android-arm64/package.json').version
+        const binding = require('@mtharrison/nickle-android-arm64')
+        const bindingPackageVersion = require('@mtharrison/nickle-android-arm64/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -103,8 +103,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-android-arm-eabi')
-        const bindingPackageVersion = require('nickle-android-arm-eabi/package.json').version
+        const binding = require('@mtharrison/nickle-android-arm-eabi')
+        const bindingPackageVersion = require('@mtharrison/nickle-android-arm-eabi/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -124,8 +124,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-win32-x64-gnu')
-          const bindingPackageVersion = require('nickle-win32-x64-gnu/package.json').version
+          const binding = require('@mtharrison/nickle-win32-x64-gnu')
+          const bindingPackageVersion = require('@mtharrison/nickle-win32-x64-gnu/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -140,8 +140,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-win32-x64-msvc')
-          const bindingPackageVersion = require('nickle-win32-x64-msvc/package.json').version
+          const binding = require('@mtharrison/nickle-win32-x64-msvc')
+          const bindingPackageVersion = require('@mtharrison/nickle-win32-x64-msvc/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -157,8 +157,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-win32-ia32-msvc')
-        const bindingPackageVersion = require('nickle-win32-ia32-msvc/package.json').version
+        const binding = require('@mtharrison/nickle-win32-ia32-msvc')
+        const bindingPackageVersion = require('@mtharrison/nickle-win32-ia32-msvc/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -173,8 +173,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-win32-arm64-msvc')
-        const bindingPackageVersion = require('nickle-win32-arm64-msvc/package.json').version
+        const binding = require('@mtharrison/nickle-win32-arm64-msvc')
+        const bindingPackageVersion = require('@mtharrison/nickle-win32-arm64-msvc/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -192,8 +192,8 @@ function requireNative() {
       loadErrors.push(e)
     }
     try {
-      const binding = require('nickle-darwin-universal')
-      const bindingPackageVersion = require('nickle-darwin-universal/package.json').version
+      const binding = require('@mtharrison/nickle-darwin-universal')
+      const bindingPackageVersion = require('@mtharrison/nickle-darwin-universal/package.json').version
       if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
         throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
       }
@@ -208,8 +208,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-darwin-x64')
-        const bindingPackageVersion = require('nickle-darwin-x64/package.json').version
+        const binding = require('@mtharrison/nickle-darwin-x64')
+        const bindingPackageVersion = require('@mtharrison/nickle-darwin-x64/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -224,8 +224,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-darwin-arm64')
-        const bindingPackageVersion = require('nickle-darwin-arm64/package.json').version
+        const binding = require('@mtharrison/nickle-darwin-arm64')
+        const bindingPackageVersion = require('@mtharrison/nickle-darwin-arm64/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -244,8 +244,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-freebsd-x64')
-        const bindingPackageVersion = require('nickle-freebsd-x64/package.json').version
+        const binding = require('@mtharrison/nickle-freebsd-x64')
+        const bindingPackageVersion = require('@mtharrison/nickle-freebsd-x64/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -260,8 +260,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-freebsd-arm64')
-        const bindingPackageVersion = require('nickle-freebsd-arm64/package.json').version
+        const binding = require('@mtharrison/nickle-freebsd-arm64')
+        const bindingPackageVersion = require('@mtharrison/nickle-freebsd-arm64/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -281,8 +281,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-x64-musl')
-          const bindingPackageVersion = require('nickle-linux-x64-musl/package.json').version
+          const binding = require('@mtharrison/nickle-linux-x64-musl')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-x64-musl/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -297,8 +297,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-x64-gnu')
-          const bindingPackageVersion = require('nickle-linux-x64-gnu/package.json').version
+          const binding = require('@mtharrison/nickle-linux-x64-gnu')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-x64-gnu/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -315,8 +315,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-arm64-musl')
-          const bindingPackageVersion = require('nickle-linux-arm64-musl/package.json').version
+          const binding = require('@mtharrison/nickle-linux-arm64-musl')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-arm64-musl/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -331,8 +331,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-arm64-gnu')
-          const bindingPackageVersion = require('nickle-linux-arm64-gnu/package.json').version
+          const binding = require('@mtharrison/nickle-linux-arm64-gnu')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-arm64-gnu/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -349,8 +349,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-arm-musleabihf')
-          const bindingPackageVersion = require('nickle-linux-arm-musleabihf/package.json').version
+          const binding = require('@mtharrison/nickle-linux-arm-musleabihf')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-arm-musleabihf/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -365,8 +365,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-arm-gnueabihf')
-          const bindingPackageVersion = require('nickle-linux-arm-gnueabihf/package.json').version
+          const binding = require('@mtharrison/nickle-linux-arm-gnueabihf')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-arm-gnueabihf/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -383,8 +383,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-loong64-musl')
-          const bindingPackageVersion = require('nickle-linux-loong64-musl/package.json').version
+          const binding = require('@mtharrison/nickle-linux-loong64-musl')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-loong64-musl/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -399,8 +399,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-loong64-gnu')
-          const bindingPackageVersion = require('nickle-linux-loong64-gnu/package.json').version
+          const binding = require('@mtharrison/nickle-linux-loong64-gnu')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-loong64-gnu/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -417,8 +417,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-riscv64-musl')
-          const bindingPackageVersion = require('nickle-linux-riscv64-musl/package.json').version
+          const binding = require('@mtharrison/nickle-linux-riscv64-musl')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-riscv64-musl/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -433,8 +433,8 @@ function requireNative() {
           loadErrors.push(e)
         }
         try {
-          const binding = require('nickle-linux-riscv64-gnu')
-          const bindingPackageVersion = require('nickle-linux-riscv64-gnu/package.json').version
+          const binding = require('@mtharrison/nickle-linux-riscv64-gnu')
+          const bindingPackageVersion = require('@mtharrison/nickle-linux-riscv64-gnu/package.json').version
           if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
             throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
@@ -450,8 +450,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-linux-ppc64-gnu')
-        const bindingPackageVersion = require('nickle-linux-ppc64-gnu/package.json').version
+        const binding = require('@mtharrison/nickle-linux-ppc64-gnu')
+        const bindingPackageVersion = require('@mtharrison/nickle-linux-ppc64-gnu/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -466,8 +466,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-linux-s390x-gnu')
-        const bindingPackageVersion = require('nickle-linux-s390x-gnu/package.json').version
+        const binding = require('@mtharrison/nickle-linux-s390x-gnu')
+        const bindingPackageVersion = require('@mtharrison/nickle-linux-s390x-gnu/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -486,8 +486,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-openharmony-arm64')
-        const bindingPackageVersion = require('nickle-openharmony-arm64/package.json').version
+        const binding = require('@mtharrison/nickle-openharmony-arm64')
+        const bindingPackageVersion = require('@mtharrison/nickle-openharmony-arm64/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -502,8 +502,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-openharmony-x64')
-        const bindingPackageVersion = require('nickle-openharmony-x64/package.json').version
+        const binding = require('@mtharrison/nickle-openharmony-x64')
+        const bindingPackageVersion = require('@mtharrison/nickle-openharmony-x64/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -518,8 +518,8 @@ function requireNative() {
         loadErrors.push(e)
       }
       try {
-        const binding = require('nickle-openharmony-arm')
-        const bindingPackageVersion = require('nickle-openharmony-arm/package.json').version
+        const binding = require('@mtharrison/nickle-openharmony-arm')
+        const bindingPackageVersion = require('@mtharrison/nickle-openharmony-arm/package.json').version
         if (bindingPackageVersion !== '0.1.0' && process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
           throw new Error(`Native binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
         }
@@ -656,16 +656,16 @@ if (!nativeBinding || forceWasi) {
     let candidateError = null
     let candidateFailed = false
     try {
-      candidateError = __napiWasiResolveCandidate('nickle-wasm32-wasi', true, undefined)
+      candidateError = __napiWasiResolveCandidate('@mtharrison/nickle-wasm32-wasi', true, undefined)
       candidateFailed = candidateError !== null
       if (!candidateFailed) {
         if (process.env.NAPI_RS_ENFORCE_VERSION_CHECK && process.env.NAPI_RS_ENFORCE_VERSION_CHECK !== '0') {
-          const bindingPackageVersion = require('nickle-wasm32-wasi/package.json').version
+          const bindingPackageVersion = require('@mtharrison/nickle-wasm32-wasi/package.json').version
           if (bindingPackageVersion !== '0.1.0') {
             throw new Error(`WASI binding package version mismatch, expected 0.1.0 but got ${bindingPackageVersion}. You can reinstall dependencies to fix this issue.`)
           }
         }
-        wasiBinding = require('nickle-wasm32-wasi')
+        wasiBinding = require('@mtharrison/nickle-wasm32-wasi')
         nativeBinding = wasiBinding
         __napiLoadedBindingTarget = 'wasm32-wasi'
         wasiBindingLoaded = true

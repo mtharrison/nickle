@@ -1,3 +1,3 @@
-# `nickle-darwin-x64`
+# `@mtharrison/nickle-darwin-x64`
 
-This is the **x86_64-apple-darwin** binary for `nickle`
+This is the **x86_64-apple-darwin** binary for `@mtharrison/nickle`

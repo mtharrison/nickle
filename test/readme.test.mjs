@@ -18,7 +18,7 @@ for (const env of [{}, { NICKLE_NO_NATIVE: "1" }]) {
   blocks.forEach((code, i) => {
     test(`README example ${i + 1} runs (${mode})`, () => {
       const file = join(dir, `example-${i}.mjs`);
-      writeFileSync(file, code.replaceAll('from "nickle"', `from ${JSON.stringify(dist)}`));
+      writeFileSync(file, code.replaceAll('from "@mtharrison/nickle"', `from ${JSON.stringify(dist)}`));
       const out = execFileSync(process.execPath, [file], { cwd: dir, env: { ...process.env, ...env }, encoding: "utf8" });
       const expected = [...code.matchAll(/console\.log\(.*\);\s*\/\/ (.*)$/gm)].map((m) => m[1]);
       assert.deepEqual(out.trimEnd().split("\n").filter(Boolean), expected);

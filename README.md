@@ -8,7 +8,7 @@
   Open huge JS object caches in about a millisecond.
   <br>
   <a href="https://github.com/mtharrison/nickle/actions/workflows/ci.yml"><img src="https://github.com/mtharrison/nickle/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://www.npmjs.com/package/nickle"><img src="https://img.shields.io/npm/v/nickle" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/@mtharrison/nickle"><img src="https://img.shields.io/npm/v/@mtharrison/nickle" alt="npm"></a>
 </p>
 
 Caching a big object tree as JSON means paying for `JSON.parse` of the whole
@@ -29,7 +29,7 @@ It's a good fit when each run reads a small part of a large cache. If you read
 everything every time, the gain is about 2x.
 
 ```bash
-npm install nickle
+npm install @mtharrison/nickle
 ```
 
 Requires Node.js 20 or later. Files are memory-mapped by a native addon when
@@ -38,7 +38,7 @@ one is available for your platform, with a pure-JS fallback otherwise.
 ## Writing
 
 ```js
-import { write } from "nickle";
+import { write } from "@mtharrison/nickle";
 
 write("cache.nkl", {
   users: [{ name: "alice", roles: ["admin"] }, { name: "bob", roles: [] }],
@@ -79,7 +79,7 @@ Invalid values throw a `TypeError` before any file is touched. The message
 names the problem and the property path to the offending value:
 
 ```js
-import { write } from "nickle";
+import { write } from "@mtharrison/nickle";
 
 try {
   write("bad.nkl", { a: { b: [0, new Date()] } });
@@ -104,7 +104,7 @@ as-is.
 ## Reading
 
 ```js
-import { write, open } from "nickle";
+import { write, open } from "@mtharrison/nickle";
 
 write("cache.nkl", { users: [{ name: "alice" }, { name: "bob" }] });
 
@@ -142,7 +142,7 @@ Views are immutable. Assigning, defining or deleting a property throws a
 such as `push` and `sort`:
 
 ```js
-import { write, open } from "nickle";
+import { write, open } from "@mtharrison/nickle";
 
 write("cache.nkl", { users: [{ name: "alice" }] });
 const { root } = open("cache.nkl");
@@ -162,7 +162,7 @@ or anywhere real objects are required. It is faster than `JSON.parse` of the
 same data. Primitives and anything that isn't a view are returned unchanged.
 
 ```js
-import { write, open, materialize } from "nickle";
+import { write, open, materialize } from "@mtharrison/nickle";
 
 write("cache.nkl", { users: [{ name: "alice" }, { name: "bob" }] });
 const handle = open("cache.nkl");
@@ -182,7 +182,7 @@ handle throws an `Error` with `code: "NICKLE_CLOSED"`. Values from
 does nothing.
 
 ```js
-import { write, open, materialize } from "nickle";
+import { write, open, materialize } from "@mtharrison/nickle";
 
 write("cache.nkl", { users: [{ name: "alice" }] });
 const handle = open("cache.nkl");
@@ -221,8 +221,6 @@ a prebuilt native addon memory-maps the file, so `open()` doesn't read it.
 Elsewhere, or with `NICKLE_NO_NATIVE=1` set, nickle reads the whole file into
 memory at `open()` instead. Everything else behaves the same.
 
-In 0.1.0 the Windows binary isn't published yet, so Windows uses the fallback.
-
 ## Caveats
 
 - **Views are not the objects you wrote.** A view is never `===` to a
@@ -257,7 +255,8 @@ Design notes, specs and benchmark results live in `openspec/` and
 
 To release, bump the version with `npm version <patch|minor|major>`, then push
 the tag with `git push --follow-tags`. The Release workflow builds the five
-platform binaries, publishes `nickle-<platform>` packages and then `nickle`.
+platform binaries, publishes the `@mtharrison/nickle-<platform>` packages and then
+`@mtharrison/nickle`.
 It needs an `NPM_TOKEN` repository secret.
 
 ## License

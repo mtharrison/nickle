@@ -33,8 +33,8 @@ jobs:
       - name: Move binaries into the platform packages
         run: npm run artifacts
       - run: ls -R npm
-      # Publishes the nickle-<platform> packages (skipping any already on npm),
-      # then nickle with them as optionalDependencies. Safe to re-run.
+      # Publishes the @mtharrison/nickle-<platform> packages (skipping any already
+      # on npm), then @mtharrison/nickle with them as optionalDependencies.
       - run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
