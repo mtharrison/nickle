@@ -33,9 +33,9 @@ jobs:
       - name: Move binaries into the platform packages
         run: npm run artifacts
       - run: ls -R npm
-      # prepublishOnly publishes the five nickle-<platform> packages and adds
-      # them to optionalDependencies, then the root package is published.
-      - run: npm publish
+      # Publishes the nickle-<platform> packages (skipping any already on npm),
+      # then nickle with them as optionalDependencies. Safe to re-run.
+      - run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: "true"

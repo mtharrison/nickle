@@ -25,8 +25,8 @@
     "build:native": "napi build --platform --release --manifest-path native/Cargo.toml --output-dir native --js index.cjs --dts index.d.cts",
     "bench": "npm run build && node --expose-gc bench/run.mjs",
     "artifacts": "napi artifacts --output-dir artifacts",
-    "prepublishOnly": "napi pre-publish -t npm",
-    "version": "napi version && git add npm"
+    "version": "napi version && git add npm",
+    "release": "node scripts/publish.mjs"
   },
   "license": "MIT",
   "devDependencies": {
