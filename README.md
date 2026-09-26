@@ -221,6 +221,8 @@ a prebuilt native addon memory-maps the file, so `open()` doesn't read it.
 Elsewhere, or with `NICKLE_NO_NATIVE=1` set, nickle reads the whole file into
 memory at `open()` instead. Everything else behaves the same.
 
+In 0.1.0 the Windows binary isn't published yet, so Windows uses the fallback.
+
 ## Caveats
 
 - **Views are not the objects you wrote.** A view is never `===` to a
