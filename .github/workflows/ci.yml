@@ -8,39 +8,39 @@ on:
 
 jobs:
   build-test:
-    name: ${{ matrix.target }} / node ${{ matrix.node }}
-    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.platform.target }} / node ${{ matrix.node }}
+    runs-on: ${{ matrix.platform.os }}
     strategy:
       fail-fast: false
       matrix:
         node: [20, 24]
-        include:
+        platform:
           - { os: macos-latest, target: aarch64-apple-darwin }
           - { os: macos-15-intel, target: x86_64-apple-darwin }
           - { os: ubuntu-latest, target: x86_64-unknown-linux-gnu }
           - { os: ubuntu-24.04-arm, target: aarch64-unknown-linux-gnu }
           - { os: windows-latest, target: x86_64-pc-windows-msvc }
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node }}
           cache: npm
       - uses: dtolnay/rust-toolchain@stable
         with:
-          targets: ${{ matrix.target }}
+          targets: ${{ matrix.platform.target }}
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: native
       - run: npm ci
-      - run: npm run build:native -- --target ${{ matrix.target }}
-      - run: cargo test --release --manifest-path native/Cargo.toml --target ${{ matrix.target }}
+      - run: npm run build:native -- --target ${{ matrix.platform.target }}
+      - run: cargo test --release --manifest-path native/Cargo.toml --target ${{ matrix.platform.target }}
       - run: npm test
       - name: Check the native addon was used
         run: node -e "import('./dist/native.js').then(m => { if (m.mode() !== 'native') process.exit(1) })"
       - if: matrix.node == 24
         uses: actions/upload-artifact@v4
         with:
-          name: bindings-${{ matrix.target }}
+          name: bindings-${{ matrix.platform.target }}
           path: native/*.node
           if-no-files-found: error
