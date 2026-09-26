@@ -40,4 +40,4 @@
 
 - [x] 6.1 Add a two-process test: a writer loop against a reader that opens and materializes. Verify every read yields an intact tree, the snapshot-after-replace scenario passes on POSIX, and the test is skipped on Windows
 - [x] 6.2 Run the benchmark suite (`npm run bench`) on the reference tree. Verify `open` takes under 5 ms with native, materialize beats `JSON.parse`, and lazy reads stay under ~200 ns, then record the numbers in `bench/RESULTS.md`
-- [ ] 6.3 Configure the napi-rs GitHub Actions matrix for the five target platforms, and verify a CI run builds every binary and passes `npm test` on each
+- [x] 6.3 Configure the napi-rs GitHub Actions matrix for the five target platforms, and verify a CI run builds every binary and passes `npm test` on each
