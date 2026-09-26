@@ -1,0 +1,40 @@
+{
+  "name": "nickle-win32-x64-msvc",
+  "version": "0.1.0",
+  "cpu": [
+    "x64"
+  ],
+  "main": "nickle.win32-x64-msvc.node",
+  "files": [
+    "nickle.win32-x64-msvc.node"
+  ],
+  "description": "Open huge JS object caches in about a millisecond: a memory-mapped binary format that decodes lazily",
+  "keywords": [
+    "cache",
+    "mmap",
+    "binary",
+    "serialization",
+    "lazy",
+    "json",
+    "napi"
+  ],
+  "author": "Matt Harrison",
+  "homepage": "https://github.com/mtharrison/nickle#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtharrison/nickle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mtharrison/nickle/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "os": [
+    "win32"
+  ]
+}

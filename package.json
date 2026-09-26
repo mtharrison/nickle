@@ -1,0 +1,69 @@
+{
+  "name": "nickle",
+  "version": "0.1.0",
+  "description": "Open huge JS object caches in about a millisecond: a memory-mapped binary format that decodes lazily",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "native/index.cjs",
+    "native/index.d.cts"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"test/**/*.test.mjs\"",
+    "build:native": "napi build --platform --release --manifest-path native/Cargo.toml --output-dir native --js index.cjs --dts index.d.cts",
+    "bench": "npm run build && node --expose-gc bench/run.mjs",
+    "artifacts": "napi artifacts --output-dir artifacts",
+    "prepublishOnly": "napi pre-publish -t npm",
+    "version": "napi version && git add npm"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/cli": "^3.10.5",
+    "@types/node": "^20.19.43",
+    "typescript": "^7.0.2"
+  },
+  "napi": {
+    "binaryName": "nickle",
+    "targets": [
+      "aarch64-apple-darwin",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-pc-windows-msvc"
+    ]
+  },
+  "keywords": [
+    "cache",
+    "mmap",
+    "binary",
+    "serialization",
+    "lazy",
+    "json",
+    "napi"
+  ],
+  "author": "Matt Harrison",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtharrison/nickle.git"
+  },
+  "homepage": "https://github.com/mtharrison/nickle#readme",
+  "bugs": {
+    "url": "https://github.com/mtharrison/nickle/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
